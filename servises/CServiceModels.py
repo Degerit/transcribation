@@ -2,7 +2,7 @@ import torch
 import whisper
 import librosa
 
-class WisperServise:
+class WisperService:
     def transcribe(self, name):
         self.name = name
         audio, sr = librosa.load(self.name, sr=16000)
