@@ -1,17 +1,10 @@
-import torch
-import whisper
-import librosa
+from fastapi import FastAPI
+from routers.CRoutersModels import router
 
-file_name = "test.wav"
+app = FastAPI()
+app.include_router(router)
 
-class WisperServise:
-    def transcribe(self, name):
-        self.name = name
-        audio, sr = librosa.load(self.name, sr=16000)
-        model = whisper.load_model("tiny").to("cuda")
-        result = model.transcribe(audio, language="ru", fp16= torch.cuda.is_available())
-        return result["text"]
+@app.get("/test")
+def read_root():
+    return 1
 
-wisper_servise = WisperServise()
-transcription = wisper_servise.transcribe(file_name)
-print(transcription)
