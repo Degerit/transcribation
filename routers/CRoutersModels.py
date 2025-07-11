@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from servises.CServiseModels import WisperServise
+from services.CServiceModels import WisperService
 
 router = APIRouter(
     prefix = "/function",
@@ -9,6 +9,6 @@ router = APIRouter(
 
 @router.get("/transcribe")
 async def transcribation():
-    servise = WisperServise()
-    result = servise.transcribe("./files/test.wav")
+    service = WisperService()
+    result = service.transcribe("./files/test.wav")
     return {"text" : result}
