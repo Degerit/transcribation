@@ -6,4 +6,4 @@ app.include_router(router)
 
 @app.get("/test")
 def read_root():
-    return 1337
+    return 133788
