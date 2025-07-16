@@ -5,7 +5,7 @@ import librosa
 class WisperService:
     def transcribe(self, name):
         self.name = name
-        audio, sr = librosa.load(self.naаme, sr=16000)
+        audio, sr = librosa.load(self.naааme, sr=16000)
         model = whisper.load_model("tiny").to("cuda")
         result = model.transcribe(audio, language="ru", fp16= torch.cuda.is_available())
         return result["text"]
