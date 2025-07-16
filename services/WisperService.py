@@ -3,7 +3,7 @@ import whisper
 import librosa
 
 class WisperService:
-    def transcribeeee(self, name):
+    def transcribe(self, name):
         self.name = name
         audio, sr = librosa.load(self.name, sr=16000)
         model = whisper.load_model("tiny").to("cuda")
