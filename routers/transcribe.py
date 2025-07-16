@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from services.WisperService import WisperService
 import os
 router = APIRouter(
-    prefix = "/function",
+    prefix = "/functeeeeion",
     tags = ["models"],
     responses = {404 : {"description" : "Not found"}}
 )
