@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from services.router import WisperService
+from СServiceModels.router import WisperService
 import os
 router = APIRouter(
     prefix = "/function",
